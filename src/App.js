@@ -25,7 +25,17 @@ export default () => {
     <div className="App">
       <div>{count}</div>
       <button onClick={()=> setCount(count+1)}>+</button>
-      {loading ? <div>loading...</div> : <div>{data.name.first}</div>}
+      {loading ? <div>loading...</div> : 
+      <>
+      <div>{`Name:  ${data.name.first} ${data.name.last} `}</div>
+      <div>{`Username:  ${data.login.username}`}</div>
+      <div>{`Country:  ${data.location.country}`}</div>
+      <div>{`City:  ${data.location.city}`}</div>
+      <div>{`Age:  ${data.dob.age}`}</div>
+      <img src={data.picture.large}></img>
+      </>
+      }
+
     </div>
   );
 };
